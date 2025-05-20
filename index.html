@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موس سفارشی</title>
+    <style>
+        body {
+            cursor: none; /* مخفی کردن موس پیش‌فرض */
+        }
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 0, 0, 0.7);
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            transition: transform 0.1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <script>
+        const cursor = document.querySelector(".custom-cursor");
+
+        document.addEventListener("mousemove", (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+    </script>
+</body>
+</html>
